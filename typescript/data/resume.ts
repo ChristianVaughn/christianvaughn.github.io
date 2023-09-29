@@ -20,6 +20,7 @@ export const educationHistory: IExperienceBox[] = [
 
 export const workingHistory: IExperienceBox[] = [
   {
+    text: "",
     title: "Software Engineer II, Backend - Keiser Corporation",
     year: "Aug 2023 - Present"
   },
