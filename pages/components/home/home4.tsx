@@ -10,7 +10,7 @@ const Home: React.FC = () => {
       <Row>
         <Col md={6} className="mb-30" data-aos="fade-right" data-aos-duration="400" data-aos-delay="400" data-aos-easing="ease-out-cubic">
           <figure className="profile-image text-center">
-            <img src={imagePath + "/profile.png"} alt="" width="400" />
+            <img src={imagePath + "/profile.jpg"} alt="" width="400" />
           </figure>
         </Col>
         <Col md={6} className="mb-30" data-aos="fade-left" data-aos-duration="400" data-aos-delay="500" data-aos-easing="ease-out-cubic">
