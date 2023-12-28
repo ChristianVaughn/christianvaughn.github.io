@@ -44,7 +44,7 @@ const Header: React.FC<INavBar> = ({ navs, className }) => {
       </Navbar.Toggle>
       <div className={`navbar-collapse theme-bg ${isActive ? 'active' : ''}`}>
         <figure className="profile-img mb-0">
-          <img src={imagePath + "/profile.png"} className="rounded-circle mx-auto img-fluid" alt="" />
+          <img src={imagePath + "/profile.jpg"} className="rounded-circle mx-auto img-fluid" alt="" />
         </figure>
         <ul className="nav">
           {
