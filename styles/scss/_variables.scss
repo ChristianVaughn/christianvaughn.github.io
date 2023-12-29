@@ -26,52 +26,57 @@ $grays: (
 $blue: #425cbb !default;
 $pink: #f05492 !default;
 $red: #ef4d56 !default;
-$orange: #fd7e14 !default;
+$orange: #fdb068 !default;
 $yellow: #ffc835 !default;
 $green: #69c380 !default;
 $teal: #22d4b5 !default;
 $cyan: #0dcaf0 !default;
 $colors: ();
-$colors:  map-merge((
-  "blue": $blue,
-  "pink": $pink,
-  "red": $red,
-  "orange": $orange,
-  "yellow": $yellow,
-  "green": $green,
-  "teal": $teal,
-  "cyan": $cyan,
-  "white": white,
-  "gray": $gray-600,
-  "gray-dark": $gray-800,
-  "facebook": "#2b55cc",
-  "twitter": "#4ac7ec",
-  "dribble": $pink,
-), $colors);
+$colors: map-merge(
+  (
+    "blue": $blue,
+    "pink": $pink,
+    "red": $red,
+    "orange": $orange,
+    "yellow": $yellow,
+    "green": $green,
+    "teal": $teal,
+    "cyan": $cyan,
+    "white": white,
+    "gray": $gray-600,
+    "gray-dark": $gray-800,
+    "facebook": "#2b55cc",
+    "twitter": "#4ac7ec",
+    "dribble": $pink,
+  ),
+  $colors
+);
 
 $primary: #00bcd4;
 $secondary: #7081b9;
 $success: $green;
-$info: #304CFD;//#377dff;
+$info: #304cfd; //#377dff;
 $warning: $yellow;
 $danger: $red;
 // stylelint-disable-next-line scss/dollar-variable-default
 $theme-colors: ();
-$theme-colors:  map-merge((
-  "primary": $primary,
-  "secondary": $secondary,
-  "success": $success,
-  "info": $info,
-  "warning": $warning,
-  "danger": $danger,
-  "orange": $orange,
-  "teal": $teal,
-  "blue": $blue,
-  "facebook": #2b55cc,
-  "twitter": #4ac7ec,
-  "dribble": $pink,
-), $theme-colors);
-
+$theme-colors: map-merge(
+  (
+    "primary": $primary,
+    "secondary": $secondary,
+    "success": $success,
+    "info": $info,
+    "warning": $warning,
+    "danger": $danger,
+    "orange": $orange,
+    "teal": $teal,
+    "blue": $blue,
+    "facebook": #2b55cc,
+    "twitter": #4ac7ec,
+    "dribble": $pink,
+  ),
+  $theme-colors
+);
 
 $input-focus-border-color: $red;
 
@@ -139,7 +144,7 @@ $theme-list: (
     //resume
     active-history-color: $white,
     //setting
-    setting-dropdown-bg: $white
+    setting-dropdown-bg: $white,
   ),
   dark: (
     default: #d4dbe5,
@@ -184,6 +189,6 @@ $theme-list: (
     //resume
     active-history-color: $dark-light,
     //setting
-    setting-dropdown-bg: $dark-light
+    setting-dropdown-bg: $dark-light,
   ),
 );
