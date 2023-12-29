@@ -49,7 +49,7 @@ const Settings: React.FC<ISettings> = () => {
     addLayoutClass(bodyElem);
     if (!ISSERVER) {
       setIsLight(window.localStorage.getItem("theme-light") === 'false');
-      const themeType = window.localStorage.getItem("fileName") || "blue";
+      const themeType = window.localStorage.getItem("fileName") || "orange";
       bodyElem.classList.add("theme-type-" + themeType);
     }
   }, []);
