@@ -40,12 +40,12 @@ export const portoflio: IPortoflio[] = [
   },
   {
     tags: ["Python", "NumPy", "CuPy"],
-    title: "PDCGMM Matrix Mul.",
+    title: "Distributed Computing Research",
 	type: EProjectType.PYTHON,
     img: "python.png",
     groups: '["python"]',
-	link: "https://github.com/JohnEaganFS/CSCI174-Project",
-	altLink: "View on Github"
+	link: "https://ieeexplore.ieee.org/document/10099141",
+	altLink: "Read publication at IEEE"
   },
   {
     tags: ["HTML", "Javascript", "NodeJs"],
