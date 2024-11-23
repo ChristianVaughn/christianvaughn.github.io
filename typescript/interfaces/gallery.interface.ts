@@ -1,6 +1,5 @@
-
-export interface IFilterNav { 
-  key: string; 
+export interface IFilterNav {
+  key: string;
   text: String;
 }
 
@@ -8,7 +7,8 @@ export enum EProjectType {
   PYTHON = "PYTHON",
   JAVASCRIPT = "JAVASCRIPT",
   CPP = "CPP",
-  OTHER = "OTHER"
+  OTHER = "OTHER",
+  TYPESCRIPT = "TYPESCRIPT",
 }
 
 export interface IPortoflio {

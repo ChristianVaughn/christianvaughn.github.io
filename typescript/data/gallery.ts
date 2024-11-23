@@ -1,33 +1,55 @@
-import { IFilterNav, IPortoflio, EProjectType } from "../interfaces/gallery.interface";
+import {
+  IFilterNav,
+  IPortoflio,
+  EProjectType,
+} from "../interfaces/gallery.interface";
 import { imagePath } from "../../custom.config";
 
 export const filterNav2: IFilterNav[] = [
   {
     key: "all",
-    text: "All"
+    text: "All",
   },
   {
     key: "python",
-    text: "Python"
+    text: "Python",
   },
   {
     key: "javascript",
-    text: "Javascript"
+    text: "Javascript",
   },
   {
     key: "cpp",
-    text: "C++"
-  }
-]
+    text: "C++",
+  },
+];
 
 export const portoflio: IPortoflio[] = [
+  {
+    tags: ["SvelteKit", "Typescript", "Bun"],
+    title: "Unggoy.xyz",
+    type: EProjectType.OTHER,
+    img: "svelte.svg",
+    groups: '["javascript"]',
+    link: "https://www.unggoy.xyz",
+    altLink: "View the site",
+  },
+  {
+    tags: ["ElysiaJS", "Typescript", "Bun"],
+    title: "Unggoy Api",
+    type: EProjectType.TYPESCRIPT,
+    img: "typescript.svg",
+    groups: '["javascript"]',
+    link: "https://github.com/Unggoy1/unggoy-api",
+    altLink: "View on Github",
+  },
   {
     tags: ["Python", "PyTorch", "SkLearn"],
     title: "Reflex-Based Local Training",
     type: EProjectType.PYTHON,
     img: "pytorch.svg",
     groups: '["python"]',
-	altLink: "Awaiting publication"
+    altLink: "Awaiting publication",
   },
   {
     tags: ["Python", "NumPy"],
@@ -35,17 +57,17 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.PYTHON,
     img: "python.png",
     groups: '["python"]',
-	link: "https://github.com/ChristianVaughn/Maze-Generation",
-	altLink: "View on Github"
+    link: "https://github.com/ChristianVaughn/Maze-Generation",
+    altLink: "View on Github",
   },
   {
     tags: ["Python", "NumPy", "CuPy"],
     title: "Distributed Computing Research",
-	type: EProjectType.PYTHON,
+    type: EProjectType.PYTHON,
     img: "python.png",
     groups: '["python"]',
-	link: "https://ieeexplore.ieee.org/document/10099141",
-	altLink: "Read publication at IEEE"
+    link: "https://ieeexplore.ieee.org/document/10099141",
+    altLink: "Read publication at IEEE",
   },
   {
     tags: ["HTML", "Javascript", "NodeJs"],
@@ -53,8 +75,8 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.JAVASCRIPT,
     img: "nodejs-icon.svg",
     groups: '["javascript"]',
-	link: "https://github.com/ChristianVaughn/fileshare",
-	altLink: "View on Github"
+    link: "https://github.com/ChristianVaughn/fileshare",
+    altLink: "View on Github",
   },
   {
     tags: ["Python", "MatPlotLib", "NumPy"],
@@ -62,8 +84,8 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.PYTHON,
     img: "python.png",
     groups: '["python"]',
-	link: "https://github.com/ChristianVaughn/Traveling-Salseman-Problem-264",
-	altLink: "View on Github"
+    link: "https://github.com/ChristianVaughn/Traveling-Salseman-Problem-264",
+    altLink: "View on Github",
   },
   {
     tags: ["Python", "Pandas", "MatPlotLib"],
@@ -71,8 +93,8 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.PYTHON,
     img: "python.png",
     groups: '["python"]',
-	link: "https://github.com/ChristianVaughn/Disease-Simulation",
-	altLink: "View on Github"
+    link: "https://github.com/ChristianVaughn/Disease-Simulation",
+    altLink: "View on Github",
   },
   {
     tags: ["python", "blender", "binary files"],
@@ -80,8 +102,8 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.PYTHON,
     img: "python.png",
     groups: '["python"]',
-	link: "https://github.com/Just-Weeb/Eldewrito-Prefab-Exporter",
-	altLink: "View on Github"
+    link: "https://github.com/Just-Weeb/Eldewrito-Prefab-Exporter",
+    altLink: "View on Github",
   },
   {
     tags: ["C++"],
@@ -89,8 +111,8 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.CPP,
     img: "cpp.svg",
     groups: '["cpp"]',
-	link: "https://github.com/ChristianVaughn/Tic-Tac-Toe",
-	altLink: "View on Github"
+    link: "https://github.com/ChristianVaughn/Tic-Tac-Toe",
+    altLink: "View on Github",
   },
   {
     tags: ["HTML", "Javascript", "PHP", "sql"],
@@ -98,8 +120,7 @@ export const portoflio: IPortoflio[] = [
     type: EProjectType.JAVASCRIPT,
     img: "nodejs-icon.svg",
     groups: '["javascript"]',
-	link: "https://github.com/ChristianVaughn/Othello",
-	altLink: "View on Github"
+    link: "https://github.com/ChristianVaughn/Othello",
+    altLink: "View on Github",
   },
-
-]
+];

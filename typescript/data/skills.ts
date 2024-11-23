@@ -3,31 +3,31 @@ import { ISkill, ISkill2 } from "../interfaces/skill.interface";
 export const designSkills: ISkill[] = [
   {
     title: "Photoshop",
-    percentage: 80
+    percentage: 80,
   },
   {
     title: "Sketch",
-    percentage: 60
+    percentage: 60,
   },
   {
     title: "Adobe Xd",
-    percentage: 30
-  }
-]
+    percentage: 30,
+  },
+];
 export const codeSkills: ISkill[] = [
   {
     title: "Javascript",
-    percentage: 90
+    percentage: 90,
   },
   {
     title: "HTML5",
-    percentage: 70
+    percentage: 70,
   },
   {
     title: "CSS3",
-    percentage: 50
-  }
-]
+    percentage: 50,
+  },
+];
 
 export const skills: ISkill2[] = [
   {
@@ -44,11 +44,6 @@ export const skills: ISkill2[] = [
     img: "nodejs-icon.svg",
     title: "Javascript",
     //exp: "4 Years Experience"
-  },
-  {
-    img: "cpp.svg",
-    title: "C++",
-    //exp: "6 Years Experience"
   },
   {
     img: "numpy.svg",
@@ -81,8 +76,13 @@ export const skills: ISkill2[] = [
     //exp: "1 Years Experience"
   },
   {
+    img: "postgres.svg",
+    title: "PostgreSQL",
+    //exp: "3 Years Experience"
+  },
+  {
     img: "mysql.png",
     title: "MySQL",
     //exp: "3 Years Experience"
-  }
-]
+  },
+];
