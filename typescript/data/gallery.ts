@@ -27,6 +27,15 @@ export const filterNav2: IFilterNav[] = [
 export const portoflio: IPortoflio[] = [
   {
     tags: ["SvelteKit", "Typescript", "Bun"],
+    title: "Cv Bladers Ranked Leaderboard",
+    type: EProjectType.OTHER,
+    img: "svelte.svg",
+    groups: '["javascript"]',
+    link: "https://www.cvbladers.com",
+    altLink: "View the site",
+  },
+  {
+    tags: ["SvelteKit", "Typescript", "Bun"],
     title: "Unggoy.xyz",
     type: EProjectType.OTHER,
     img: "svelte.svg",
