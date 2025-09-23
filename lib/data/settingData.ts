@@ -1,8 +1,8 @@
-import { liveURL } from "../../../custom.config";
+import { liveURL } from "../../custom.config";
 import {
   IPageTheme,
   IPageURL,
-} from "../../../typescript/interfaces/common.interface";
+} from "../../typescript/interfaces/common.interface";
 
 export const pageURLs: IPageURL[] = [
   {

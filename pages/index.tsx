@@ -8,7 +8,7 @@ import Resume from "./components/resume/resume4";
 import Works from "./components/works/work4";
 import Footer from "./components/footer/footer2";
 import { Container } from "react-bootstrap";
-import { IDefaultReducer } from "./redux/store";
+import { IDefaultReducer } from "../lib/redux/store";
 import { useSelector } from "react-redux";
 import { imagePath } from "../custom.config";
 import Divider from "./shared/divider/divider";

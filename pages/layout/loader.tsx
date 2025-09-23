@@ -1,7 +1,7 @@
 import React from "react";
 import { useSelector } from "react-redux";
-import { IDefaultReducer } from "../redux/store";
-import { animateValue } from "../shared/utils/progressLoader";
+import { IDefaultReducer } from "../../lib/redux/store";
+import { animateValue } from "../../lib/utils/progressLoader";
 
 interface IPreloader {
   setIsShow: (flag: boolean) => void;

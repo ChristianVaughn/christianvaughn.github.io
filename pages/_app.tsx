@@ -10,8 +10,7 @@ import Settings from './components/demo/settings';
 import { useRouter } from 'next/router';
 import { metaTitle } from '../typescript/data/metaTitle';
 import { Provider } from 'react-redux';
-import { getStore } from './redux/store';
-import { SSRProvider } from 'react-bootstrap';
+import { getStore } from '../lib/redux/store';
 import PreLoader from './layout/loader';
 
 const MyApp = ({ Component, pageProps }: AppProps, props: any) => {
@@ -25,17 +24,15 @@ const MyApp = ({ Component, pageProps }: AppProps, props: any) => {
     return null
   }, [router])
   return (
-    <SSRProvider>
-      <Provider store={getStore()}>
-        <Layout props={{ title }}>
-          <>
-            {isShow ? <PreLoader setIsShow={setIsShow} /> : <></>}
-            <Component {...pageProps} />
-            <Settings />
-          </>
-        </Layout>
-      </Provider>
-    </SSRProvider>
+    <Provider store={getStore()}>
+      <Layout props={{ title }}>
+        <>
+          {isShow ? <PreLoader setIsShow={setIsShow} /> : <></>}
+          <Component {...pageProps} />
+          <Settings />
+        </>
+      </Layout>
+    </Provider>
   )
 }
 

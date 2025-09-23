@@ -16,7 +16,7 @@ const Home: React.FC = () => {
         <Col md={6} className="mb-30" data-aos="fade-left" data-aos-duration="400" data-aos-delay="500" data-aos-easing="ease-out-cubic">
           <div className="profile-info">
             <h6 className="mb-15">
-              <span className="d-inline-block text-white">Hello I'm</span>
+              <span className="d-inline-block text-white">Hello I&apos;m</span>
             </h6>
             <h1 className="mb-0">Christian Vaughn</h1>
             <h4 className="mb-0"><span id="typewriter">
@@ -36,15 +36,11 @@ const Home: React.FC = () => {
             <ul className="list-unstyled my-30">
               <li className="py-1">
                 <i className="bx bx-envelope me-2 align-middle fs-18"></i>
-                <NextLink href={"mailto:"} passHref>
-                  <a>contact@christianvaughn.net</a>
-                </NextLink>
+                <NextLink href={"mailto:"}>contact@christianvaughn.net</NextLink>
               </li>
               <li className="py-1">
                 <i className="bx bx-phone me-2 align-middle fs-18"></i>
-                <NextLink href={"callto:"} passHref>
-                  <a>(559) 579-7885</a>
-                </NextLink>
+                <NextLink href={"callto:"}>(559) 579-7885</NextLink>
               </li>
               <li className="py-1">
                 <i className="bx bx-map me-2 align-middle fs-18"></i>
@@ -52,12 +48,8 @@ const Home: React.FC = () => {
               </li>
             </ul>
             <div className="socials-icons socials-grey">
-              <NextLink href={"https://github.com/ChristianVaughn"} passHref>
-                <a><i className="bx bxl-github"></i></a>
-              </NextLink>
-              <NextLink href={"https://www.linkedin.com/in/christian-vaughn-3a29bb23b/"} passHref>
-                <a><i className="bx bxl-linkedin"></i></a>
-              </NextLink>
+              <NextLink href={"https://github.com/ChristianVaughn"}><i className="bx bxl-github"></i></NextLink>
+              <NextLink href={"https://www.linkedin.com/in/christian-vaughn-3a29bb23b/"}><i className="bx bxl-linkedin"></i></NextLink>
               {/* end social-icon */}
             </div>
           </div>

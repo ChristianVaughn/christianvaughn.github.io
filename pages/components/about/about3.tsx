@@ -1,9 +1,7 @@
-import NextLink from "next/link";
 import React from "react";
 import { Col, Row } from "react-bootstrap";
 import SectionHeader from "../../shared/sectionHeader/sectionHeader";
 import { imagePath } from "../../../custom.config";
-import Services from "../services/service2";
 
 const AboutUs: React.FC<{ isLight: boolean }> = ({ isLight }) => {
   return (
@@ -48,7 +46,7 @@ const AboutUs: React.FC<{ isLight: boolean }> = ({ isLight }) => {
             data-aos-easing="ease-out-cubic"
           >
             <p>
-              Simultaneously, I've nurtured a keen interest in data science and
+              Simultaneously, I&apos;ve nurtured a keen interest in data science and
               machine learning, highlighting my love for solving complex
               problems and turning data into actionable insights. Combining
               these skills, I strive to deliver innovative and impactful
@@ -58,9 +56,6 @@ const AboutUs: React.FC<{ isLight: boolean }> = ({ isLight }) => {
           </Col>
         </Row>
       </div>
-      <Services
-        className={`pt-80 pb-50 ${!isLight ? "box-content-inner-bg" : "bg-light"} box-content-inner`}
-      />
     </section>
   );
 };

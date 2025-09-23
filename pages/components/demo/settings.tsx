@@ -1,9 +1,9 @@
 import React from "react";
 import { Button, Dropdown } from "react-bootstrap";
 import { useDispatch } from "react-redux";
-import { pageThemes, pageURLs } from "./settingData";
+import { pageThemes, pageURLs } from "../../../lib/data/settingData";
 import { IPageTheme, IPageURL } from "../../../typescript/interfaces/common.interface";
-import { setThemeType } from "../../redux/reducer";
+import { setThemeType } from "../../../lib/redux/reducer";
 import { useRouter } from "next/router";
 import { liveURL } from "../../../custom.config";
 
