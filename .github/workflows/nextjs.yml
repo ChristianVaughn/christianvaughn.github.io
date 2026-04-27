@@ -17,9 +17,6 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
-    defaults:
-      run:
-        working-directory: svelte-app
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -28,7 +25,6 @@ jobs:
         with:
           node-version: "22"
           cache: "npm"
-          cache-dependency-path: svelte-app/package-lock.json
       - name: Setup Pages
         uses: actions/configure-pages@v5
       - name: Install dependencies
@@ -38,7 +34,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: svelte-app/dist
+          path: dist
 
   deploy:
     environment:
