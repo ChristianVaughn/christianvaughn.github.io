@@ -2,7 +2,19 @@
   "permissions": {
     "allow": [
       "WebSearch",
-      "Bash(npm run build:*)"
+      "Bash(npm run build:*)",
+      "Bash(grep -rn 'image-path\\\\|\\\\$image-path' /d/Documents/Github/SimplyTestmu.github.io/svelte-app/src/styles/)",
+      "mcp__svelte__svelte-autofixer",
+      "Bash(npm install *)",
+      "Bash(npx svelte-check *)",
+      "Bash(curl -s -o /dev/null -w \"main.ts:%{http_code} \" http://localhost:5173/src/main.ts)",
+      "Bash(curl -s -o /dev/null -w \"App:%{http_code}\\\\n\" http://localhost:5173/src/App.svelte)",
+      "Bash(kill %1)",
+      "Bash(curl *)",
+      "Bash(mv profile.jpg profile-original.jpg)",
+      "Bash(ffmpeg -y -i profile-original.jpg -vf scale=720:720 -q:v 4 profile.jpg)",
+      "Bash(pkill -f \"vite preview\")",
+      "Bash(npm run *)"
     ],
     "deny": [],
     "ask": []

@@ -1,0 +1,13 @@
+[
+  { "img": "python.png", "title": "Python" },
+  { "img": "typescript.svg", "title": "Typescript" },
+  { "img": "nodejs-icon.svg", "title": "Javascript" },
+  { "img": "numpy.svg", "title": "NumPy" },
+  { "img": "pandas.svg", "title": "Pandas" },
+  { "img": "sklearn.svg", "title": "scikit-learn" },
+  { "img": "mpl.svg", "title": "matplotlib" },
+  { "img": "pytorch.svg", "title": "PyTorch" },
+  { "img": "openapi.svg", "title": "CodeGen" },
+  { "img": "postgres.svg", "title": "PostgreSQL" },
+  { "img": "mysql.png", "title": "MySQL" }
+]

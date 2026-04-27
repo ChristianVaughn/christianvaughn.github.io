@@ -1,44 +1,23 @@
 {
-  "name": "mono-cv",
-  "version": "0.1.0",
+  "name": "christian-vaughn-cv",
+  "version": "1.0.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
-  "dependencies": {
-    "@formspree/react": "^2.5.1",
-    "@hookform/resolvers": "^3.3.4",
-    "@reduxjs/toolkit": "^2.2.7",
-    "aos": "^2.3.4",
-    "bootstrap": "^5.3.3",
-    "html-react-parser": "^5.1.16",
-    "next": "14.2.15",
-    "photoswipe": "^5.4.4",
-    "react": "^18.3.1",
-    "react-bootstrap": "^2.10.5",
-    "react-dom": "^18.3.1",
-    "react-hook-form": "^7.53.1",
-    "react-owl-carousel": "^2.3.3",
-    "react-photoswipe-gallery": "^3.0.2",
-    "react-redux": "^9.1.2",
-    "react-scroll": "^1.9.0",
-    "sass": "^1.79.4",
-    "shufflejs": "^6.0.0",
-    "swiper": "^11.1.14",
-    "typewriter-effect": "^2.21.0",
-    "yup": "^1.4.0"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "devDependencies": {
-    "@types/aos": "^3.0.7",
-    "@types/node": "^22.7.5",
-    "@types/react": "^18.3.12",
-    "@types/react-dom": "^18.3.1",
-    "@types/react-scroll": "^1.8.10",
-    "eslint": "^8.57.1",
-    "eslint-config-next": "14.2.15",
-    "typescript": "^5.6.3"
+    "@sveltejs/vite-plugin-svelte": "^4.0.0",
+    "@tsconfig/svelte": "^5.0.4",
+    "bootstrap": "^5.3.3",
+    "sass": "^1.99.0",
+    "svelte": "^5.1.9",
+    "svelte-check": "^4.0.5",
+    "tslib": "^2.8.0",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.10"
   }
 }

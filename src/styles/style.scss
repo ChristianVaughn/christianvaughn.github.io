@@ -1,0 +1,50 @@
+// fonts loaded via index.html
+// bootstrap functions first (no var deps)
+@import "bootstrap/scss/functions";
+// our overrides FIRST so bootstrap's !default vars defer to ours
+@import "variables";
+@import "variables-bootstrap";
+// then bootstrap's variable/map/mixin/utility scaffolding
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/variables-dark";
+@import "bootstrap/scss/maps";
+@import "bootstrap/scss/mixins";
+@import "bootstrap/scss/utilities";
+// our utils
+@import "functions";
+@import "mixins";
+// minimal bootstrap pieces actually used
+@import "bootstrap/scss/root";
+@import "bootstrap/scss/reboot";
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/containers";
+@import "bootstrap/scss/buttons";
+@import "bootstrap/scss/card";
+@import "bootstrap/scss/badge";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/utilities/api";
+// general / common
+@import "general/reset";
+@import "general/spacing";
+@import "general/common";
+@import "general/preloader";
+// header / nav
+@import "general/vertical-navbar";
+// footer
+@import "general/footer";
+// sections used
+@import "sections/home";
+@import "sections/profile";
+@import "sections/resume";
+@import "sections/skills";
+@import "sections/portfolio";
+// pages
+@import "pages/box-layout";
+// app components
+@import "components/button";
+@import "components/badge";
+@import "components/text";
+@import "components/backgrounds";
+// reveal/scroll-in animation (replaces AOS)
+@import "reveal";

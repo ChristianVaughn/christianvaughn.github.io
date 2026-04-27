@@ -1,0 +1,6 @@
+@import "variables";
+@import "color-mixins";
+
+.theme-type-orange {
+  @include change-theme($orange);
+}

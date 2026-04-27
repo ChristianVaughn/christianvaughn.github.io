@@ -1,0 +1,129 @@
+{
+  "filters": [
+    { "key": "all", "text": "All" },
+    { "key": "python", "text": "Python" },
+    { "key": "javascript", "text": "Javascript" },
+    { "key": "cpp", "text": "C++" }
+  ],
+  "projects": [
+    {
+      "title": "Cv Bladers Ranked Leaderboard",
+      "type": "OTHER",
+      "img": "svelte.svg",
+      "groups": ["javascript"],
+      "tags": ["SvelteKit", "Typescript", "Bun"],
+      "link": "https://www.cvbladers.com",
+      "altLink": "View the site",
+      "description": "Ranked leaderboard and stats site for the Beyblade X community."
+    },
+    {
+      "title": "Unggoy.xyz",
+      "type": "OTHER",
+      "img": "svelte.svg",
+      "groups": ["javascript"],
+      "tags": ["SvelteKit", "Typescript", "Bun"],
+      "link": "https://www.unggoy.xyz",
+      "altLink": "View the site",
+      "description": "Community hub for Halo Infinite custom maps and modes."
+    },
+    {
+      "title": "Unggoy Api",
+      "type": "TYPESCRIPT",
+      "img": "typescript.svg",
+      "groups": ["javascript"],
+      "tags": ["ElysiaJS", "Typescript", "Bun"],
+      "link": "https://github.com/Unggoy1/unggoy-api",
+      "altLink": "View on Github",
+      "description": "Type-safe ElysiaJS backend powering Unggoy.xyz."
+    },
+    {
+      "title": "Reflex-Based Local Training",
+      "type": "PYTHON",
+      "img": "pytorch.svg",
+      "groups": ["python"],
+      "tags": ["Python", "PyTorch", "SkLearn"],
+      "altLink": "Awaiting publication",
+      "description": "On-device reflex-based training research using PyTorch."
+    },
+    {
+      "title": "Maze Generator",
+      "type": "PYTHON",
+      "img": "python.png",
+      "groups": ["python"],
+      "tags": ["Python", "NumPy"],
+      "link": "https://github.com/ChristianVaughn/Maze-Generation",
+      "altLink": "View on Github",
+      "description": "Procedural maze generation with classic algorithms in Python."
+    },
+    {
+      "title": "Distributed Computing Research",
+      "type": "PYTHON",
+      "img": "python.png",
+      "groups": ["python"],
+      "tags": ["Python", "NumPy", "CuPy"],
+      "link": "https://ieeexplore.ieee.org/document/10099141",
+      "altLink": "Read publication at IEEE",
+      "description": "GPU-accelerated distributed computing research, published at IEEE."
+    },
+    {
+      "title": "Halo Online Fileshare",
+      "type": "JAVASCRIPT",
+      "img": "nodejs-icon.svg",
+      "groups": ["javascript"],
+      "tags": ["HTML", "Javascript", "NodeJs"],
+      "link": "https://github.com/ChristianVaughn/fileshare",
+      "altLink": "View on Github",
+      "description": "Map and mode sharing service for the Halo Online community."
+    },
+    {
+      "title": "Traveling Salseman",
+      "type": "PYTHON",
+      "img": "python.png",
+      "groups": ["python"],
+      "tags": ["Python", "MatPlotLib", "NumPy"],
+      "link": "https://github.com/ChristianVaughn/Traveling-Salseman-Problem-264",
+      "altLink": "View on Github",
+      "description": "Heuristic and exact solvers for the Traveling Salesman problem."
+    },
+    {
+      "title": "Disease Simulation",
+      "type": "PYTHON",
+      "img": "python.png",
+      "groups": ["python"],
+      "tags": ["Python", "Pandas", "MatPlotLib"],
+      "link": "https://github.com/ChristianVaughn/Disease-Simulation",
+      "altLink": "View on Github",
+      "description": "Agent-based epidemic spread simulation with data visualization."
+    },
+    {
+      "title": "Halo Online Blender Plugin",
+      "type": "PYTHON",
+      "img": "python.png",
+      "groups": ["python"],
+      "tags": ["python", "blender", "binary files"],
+      "link": "https://github.com/Just-Weeb/Eldewrito-Prefab-Exporter",
+      "altLink": "View on Github",
+      "description": "Blender plugin that exports prefabs to Halo Online's binary format."
+    },
+    {
+      "title": "Monte Carlo Tic-Tac-Toe",
+      "type": "CPP",
+      "img": "cpp.svg",
+      "groups": ["cpp"],
+      "tags": ["C++"],
+      "link": "https://github.com/ChristianVaughn/Tic-Tac-Toe",
+      "altLink": "View on Github",
+      "description": "MCTS-based Tic-Tac-Toe AI written in C++."
+    },
+    {
+      "title": "Othello",
+      "type": "JAVASCRIPT",
+      "img": "nodejs-icon.svg",
+      "groups": ["javascript"],
+      "tags": ["HTML", "Javascript", "PHP", "sql"],
+      "link": "https://github.com/ChristianVaughn/Othello",
+      "altLink": "View on Github",
+      "description": "Browser-playable Othello with PHP/SQL move history."
+    }
+  ]
+}
