@@ -13,7 +13,7 @@
     >
       <figure class="profile-image text-center">
         <img
-          src="/images/profile.jpg"
+          src="/images/profile.png"
           alt=""
           width="400"
           height="400"

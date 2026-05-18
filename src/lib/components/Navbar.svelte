@@ -57,16 +57,6 @@
     <span></span>
   </button>
   <div class="navbar-collapse theme-bg" class:active={isActive}>
-    <figure class="profile-img mb-0">
-      <img
-        src="/images/profile.jpg"
-        class="rounded-circle mx-auto img-fluid"
-        width="70"
-        height="70"
-        fetchpriority="high"
-        alt=""
-      />
-    </figure>
     <ul class="nav">
       {#each navs as item (item.hash)}
         <li>

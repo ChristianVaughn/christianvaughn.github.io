@@ -133,7 +133,7 @@
     transition: background-color 0.15s ease;
   }
   .project-link:not(.is-static):hover {
-    background-color: rgba(246, 171, 101, 0.06);
+    background-color: rgba(var(--c-primary-rgb, 246, 171, 101), 0.08);
   }
   .project-main {
     flex: 1;

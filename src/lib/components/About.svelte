@@ -15,6 +15,13 @@
         data-reveal="fade-right"
       >
         <p>{@html profile.about[0]}</p>
+      </div>
+      <div
+        class="col-md-6 ps-lg-5 mb-30"
+        use:reveal={{ delay: 500 }}
+        data-reveal="fade-left"
+      >
+        <p>{@html profile.about[1]}</p>
         <div class="mt-30 mb-30 mb-md-0">
           <a
             href="mailto:{profile.email}?subject=Resume%20Request"
@@ -23,13 +30,6 @@
             Email for Resume
           </a>
         </div>
-      </div>
-      <div
-        class="col-md-6 ps-lg-5 mb-30"
-        use:reveal={{ delay: 500 }}
-        data-reveal="fade-left"
-      >
-        <p>{@html profile.about[1]}</p>
       </div>
     </div>
   </div>

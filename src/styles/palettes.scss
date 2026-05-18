@@ -1,0 +1,387 @@
+// Runtime-swappable palettes via CSS custom properties.
+// JS sets <html data-palette="..."> to pick which palette applies.
+//
+// SPECIFICITY NOTE
+// The compiled `change-theme` mixin emits rules under `.theme-type-orange`,
+// e.g. `.theme-type-orange .btn-primary` at specificity (0,2,N). Plain
+// `.btn-primary` overrides at (0,1,N) lose. So every override here is
+// prefixed with `[data-palette]` to match (0,2,N), and since this file is
+// imported LAST in style.scss the cascade tiebreak goes to us.
+//
+// RGB CHANNELS
+// rgba(var(--c-x), alpha) requires the var to be a comma-separated R,G,B
+// triple, not a hex. Each palette declares both `--c-x` (hex, for solid
+// fills) and `--c-x-rgb` (channels, for alpha mixing).
+
+:root,
+[data-palette="rose-plum"] {
+  --c-primary: #c97b8a;
+  --c-primary-rgb: 201, 123, 138;
+  --c-secondary: #4a3b5c;
+  --c-secondary-rgb: 74, 59, 92;
+  --c-accent: #e8a598;
+  --c-accent-rgb: 232, 165, 152;
+  --c-heading: #4a3b5c;
+  --c-body: #5c4a52;
+  --c-bg: #faf6f4;
+  --c-bg-soft: #f3e9e6;
+  --c-muted: #d9c9c4;
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+[data-palette="rose-sage"] {
+  --c-primary: #c97b8a;
+  --c-primary-rgb: 201, 123, 138;
+  --c-secondary: #8fa789;
+  --c-secondary-rgb: 143, 167, 137;
+  --c-accent: #e8c5b4;
+  --c-accent-rgb: 232, 197, 180;
+  --c-heading: #3d3a36;
+  --c-body: #4a4540;
+  --c-bg: #faf7f3;
+  --c-bg-soft: #ede5d9;
+  --c-muted: #c9bfb2;
+  --font-heading: "DM Serif Display", Georgia, serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+[data-palette="rose-lavender"] {
+  --c-primary: #d49aa9;
+  --c-primary-rgb: 212, 154, 169;
+  --c-secondary: #a89bc4;
+  --c-secondary-rgb: 168, 155, 196;
+  --c-accent: #f4ddd6;
+  --c-accent-rgb: 244, 221, 214;
+  --c-heading: #3d2e5c;
+  --c-body: #5a4d63;
+  --c-bg: #fdf9f7;
+  --c-bg-soft: #f4ddd6;
+  --c-muted: #d6c8df;
+  --font-heading: "Quicksand", sans-serif;
+  --font-body: "Quicksand", sans-serif;
+}
+
+[data-palette="rose-peach"] {
+  --c-primary: #c97b8a;
+  --c-primary-rgb: 201, 123, 138;
+  --c-secondary: #f6ab65;
+  --c-secondary-rgb: 246, 171, 101;
+  --c-accent: #f4c5b8;
+  --c-accent-rgb: 244, 197, 184;
+  --c-heading: #4a3b5c;
+  --c-body: #5c4a52;
+  --c-bg: #fef9f5;
+  --c-bg-soft: #fbe5d4;
+  --c-muted: #e8c9b3;
+  --font-heading: "Fraunces", Georgia, serif;
+  --font-body: "Poppins", sans-serif;
+}
+
+// ============================================================================
+// Global type & background — these target plain selectors at specificity
+// (0,0,1)–(0,0,3) so no prefix needed; !important on body bg because
+// `.body-bg` adds a background-image we want layered over our color.
+// ============================================================================
+
+body {
+  background-color: var(--c-bg) !important;
+  color: var(--c-body);
+  font-family: var(--font-body);
+}
+
+// Drop the Memphis-confetti background image — it clashes with the femme
+// palettes. The body color above handles the page background instead.
+body.body-bg {
+  background-image: none;
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+  color: var(--c-heading);
+  font-family: var(--font-heading);
+  font-weight: 600;
+}
+
+a {
+  color: var(--c-heading);
+}
+
+// ============================================================================
+// Surfaces compiled by `change-theme($orange)` under `.theme-type-orange`
+// (specificity 0,2,N). Matched here at (0,2,N) with `[data-palette]`.
+// ============================================================================
+
+[data-palette] {
+  // Wrapper background — subtle diagonal gradient from the soft palette
+  // tone (top-left) to the lighter base tone (bottom-right). Reads like
+  // soft morning light across the page.
+  .theme-soft-bg {
+    background-color: var(--c-bg-soft) !important;
+    background-image: linear-gradient(
+      135deg,
+      var(--c-bg-soft) 0%,
+      var(--c-bg) 100%
+    ) !important;
+  }
+
+  // Card background — warm cream that pairs with the wrapper instead of
+  // pure white. `bg-white` was removed from App.svelte so we own this.
+  .content.box-content-2 {
+    background-color: var(--c-bg);
+  }
+
+  // Solid theme background — used on the vertical-navbar collapse
+  .theme-bg {
+    background-color: var(--c-primary) !important;
+  }
+
+  // Theme-color utility — used on portfolio arrow icon, etc.
+  .theme-color {
+    color: var(--c-primary) !important;
+  }
+
+  // Primary buttons — original uses !important
+  .btn-primary {
+    background: var(--c-primary) !important;
+    border-color: var(--c-primary) !important;
+    color: #fff !important;
+    &:focus, &:hover, &:active, &:focus:active {
+      background: var(--c-secondary) !important;
+      border-color: var(--c-secondary) !important;
+      color: #fff !important;
+    }
+  }
+
+  .btn-outline-primary {
+    color: var(--c-primary);
+    border-color: var(--c-primary);
+    &:focus, &:hover, &:active, &:focus:active {
+      color: #fff;
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+    }
+  }
+
+  .btn-soft-primary {
+    background: rgba(var(--c-primary-rgb), 0.2);
+    border-color: rgba(var(--c-primary-rgb), 0.2);
+    color: var(--c-primary);
+    &:focus, &:hover, &:active, &:focus:active {
+      color: #fff;
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+    }
+  }
+
+  // Links on hover
+  a:hover {
+    color: var(--c-primary);
+  }
+
+  // Section-title underline marks
+  .section-title h2:after {
+    background-color: var(--c-primary);
+  }
+
+  // Generic underline accent
+  .underline:after {
+    background-color: var(--c-primary);
+  }
+
+  // Greeting pill on Home
+  .profile-info h6 span {
+    background-color: var(--c-primary);
+    color: #fff;
+  }
+
+  // Profile image (Home) — ring and palette-toned background that shows
+  // through the transparent PNG.
+  .home-profile .profile-image img {
+    border-color: rgba(var(--c-accent-rgb), 0.6);
+    background-color: rgba(var(--c-primary-rgb), 0.2);
+  }
+
+  // Profile image (Sidebar) — same palette background behind the small avatar
+  .v-header-2 .profile-img img {
+    background-color: rgba(var(--c-primary-rgb), 0.2);
+  }
+
+  // Navbar accents
+  .navbar-brand .dot {
+    background-color: var(--c-primary);
+  }
+
+  // Sidebar nav icons — each <i> renders as a white pill on the rose
+  // sidebar. Inactive uses --c-secondary so the second tone of the
+  // palette finally shows up; active flips to --c-primary. !important on
+  // color to defeat any inherited rule that might be winning specificity
+  // ties elsewhere in the cascade.
+  .v-header-2 .nav a i.bg-gray-100 {
+    background-color: #fff !important;
+    color: var(--c-secondary) !important;
+  }
+  .v-header-2 .nav a.active i.bg-gray-100 {
+    color: var(--c-primary) !important;
+  }
+
+  // Horizontal-header variant (not used by current layout but kept consistent)
+  .h-header .nav li a.active i {
+    color: var(--c-primary);
+  }
+
+  // Vertical-header profile-img border (used in some layouts)
+  .v-header .profile-img img {
+    border-color: var(--c-primary);
+  }
+
+  // Resume timeline
+  .timeline li:before {
+    background-color: var(--c-primary);
+    border-color: var(--c-primary);
+  }
+  .timeline li:first-child i {
+    background-color: var(--c-primary);
+    color: #fff;
+  }
+  .timeline li span {
+    color: var(--c-primary);
+  }
+  .timeline li.active:after {
+    border-color: rgba(var(--c-primary-rgb), 0.6);
+  }
+  .timeline-2 li:first-child:before {
+    background-color: var(--c-primary);
+    border-color: var(--c-primary);
+  }
+
+  // Skills progress bar
+  .skill-list .progress .percentage {
+    background-color: var(--c-primary);
+  }
+
+  // Portfolio thumbnail overlays (legacy markup; not used by current
+  // Portfolio.svelte but kept for completeness)
+  .work-grid-box-1 .grid-content,
+  .work-grid-box-3 .grid-content {
+    background: linear-gradient(135deg, var(--c-primary), var(--c-secondary));
+    opacity: 0.92;
+  }
+
+  .work-nav li.filtr-active {
+    color: var(--c-primary);
+  }
+
+  // Social icons
+  .socials-icons a:hover {
+    color: var(--c-primary);
+    border-color: var(--c-primary);
+  }
+  .social-share li a:hover {
+    color: var(--c-primary);
+  }
+
+  // Forms
+  .form-control:focus,
+  textarea.form-control:focus {
+    border-color: var(--c-primary);
+  }
+
+  // Short-info-2 border
+  .short-info-2 {
+    border-color: var(--c-primary);
+  }
+}
+
+// ============================================================================
+// Utility classes generated by _backgrounds.scss / _text.scss / _button.scss
+// from the `orange` key in the theme-colors map. These are flat selectors
+// (0,1,0). Portfolio.svelte uses `.text-orange` / `.bg-soft-orange` on
+// every tag badge — without these the badges stay orange forever.
+// ============================================================================
+
+[data-palette] {
+  .text-orange,
+  .text-primary {
+    color: var(--c-primary) !important;
+  }
+
+  .text-secondary {
+    color: var(--c-secondary) !important;
+  }
+
+  .text-default {
+    color: var(--c-heading) !important;
+  }
+
+  .bg-orange,
+  .bg-primary {
+    background-color: var(--c-primary) !important;
+  }
+
+  .bg-secondary {
+    background-color: var(--c-secondary) !important;
+  }
+
+  .bg-soft-orange,
+  .bg-soft-primary {
+    background-color: rgba(var(--c-primary-rgb), 0.12);
+  }
+
+  .bg-soft-secondary {
+    background-color: rgba(var(--c-secondary-rgb), 0.12);
+  }
+
+  .btn-orange {
+    background: var(--c-primary) !important;
+    border-color: var(--c-primary) !important;
+    color: #fff !important;
+    &:focus, &:hover, &:active, &:focus:active {
+      background: var(--c-secondary) !important;
+      border-color: var(--c-secondary) !important;
+    }
+  }
+
+  .btn-outline-orange {
+    color: var(--c-primary);
+    border-color: var(--c-primary);
+    &:focus, &:hover, &:active, &:focus:active {
+      color: #fff;
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+    }
+  }
+
+  .btn-soft-orange {
+    background: rgba(var(--c-primary-rgb), 0.2);
+    border-color: rgba(var(--c-primary-rgb), 0.2);
+    color: var(--c-primary);
+    &:focus, &:hover, &:active, &:focus:active {
+      color: #fff;
+      background: var(--c-primary);
+      border-color: var(--c-primary);
+    }
+  }
+}
+
+// ============================================================================
+// Component-scoped tweaks not covered by change-theme
+// ============================================================================
+
+// Portfolio.svelte uses an inline hover rgba based on the old orange.
+// We can't reach into scoped <style>, so this is best-effort — the badges
+// and text are the main concerns and they're covered above.
+
+// Bootstrap's compiled `.btn-primary` (without theme-type prefix) also
+// exists at lower specificity, but our `[data-palette] .btn-primary`
+// !important rule wins everywhere.
+
+// Loading-bar / typewriter underline strip (uses $primary teal directly)
+.loading-bar .cd-words-wrapper:after {
+  background: var(--c-primary);
+}
+
+// Spinner accent (uses $primary teal directly)
+.spinner:before {
+  border-top-color: var(--c-primary);
+}

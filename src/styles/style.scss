@@ -48,3 +48,5 @@
 @import "components/backgrounds";
 // reveal/scroll-in animation (replaces AOS)
 @import "reveal";
+// note: palette tokens are loaded separately in main.ts AFTER theme-type.scss
+// so they win cascade ties against the .theme-type-orange rules.

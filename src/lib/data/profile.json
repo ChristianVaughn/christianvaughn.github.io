@@ -1,7 +1,7 @@
 {
   "name": "Christian Vaughn",
   "greeting": "Hello I'm",
-  "roles": ["Backend Developer", "Data Scientist"],
+  "roles": ["Full-Stack Developer", "Backend Engineer", "Data Tinkerer"],
   "email": "contact@christianvaughn.net",
   "location": "California, United States",
   "socials": {
@@ -9,7 +9,7 @@
     "linkedin": "https://www.linkedin.com/in/christian-vaughn-3a29bb23b/"
   },
   "about": [
-    "Hello! My name is <strong>Christian Vaughn</strong>. I am a multifaceted Software Engineer, skilled in Python, TypeScript, and backend development. My professional experience encompasses designing, developing, testing, and deploying efficient software solutions, with a demonstrated knack for creating effective architecture.",
-    "Simultaneously, I've nurtured a keen interest in data science and machine learning, highlighting my love for solving complex problems and turning data into actionable insights. Combining these skills, I strive to deliver innovative and impactful technology solutions, always eager to learn and embrace new challenges in the rapidly evolving tech landscape."
+    "Hi, I'm <strong>Christian</strong> — a software engineer who came up backend-heavy in Python with data science on the side, and gradually grew into full-stack. At work I live in FastAPI, React, and PHP; for personal projects, ElysiaJS and Svelte.",
+    "Outside of work, you'll usually find me with a book, at the arcade playing Taiko, or out for live music."
   ]
 }
