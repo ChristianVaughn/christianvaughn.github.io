@@ -196,10 +196,41 @@ a {
   }
 
   // Profile image (Home) — ring and palette-toned background that shows
-  // through the transparent PNG.
+  // through the transparent PNG. (Used by the circular-avatar layout;
+  // currently the no-circle illustration layout is active so this rule
+  // doesn't match anything. Kept for fast revert.)
   .home-profile .profile-image img {
     border-color: rgba(var(--c-accent-rgb), 0.6);
     background-color: rgba(var(--c-primary-rgb), 0.2);
+  }
+
+  // Profile illustration (Home) — sticker-style character. The pink
+  // outline is baked into the PNG (pixel2.png) and does the grounding
+  // work. Subtle drop-shadow gives the character "lift" off the page so
+  // it reads as a sticker placed on the surface, not a flat embed.
+  .home-profile .profile-illustration {
+    position: relative;
+    display: block;
+    max-width: 100%;
+  }
+
+  .home-profile .profile-illustration .character {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    // Nudge left to compensate for the sidebar's outer padding — the
+    // character is geometrically centered in its column but visually
+    // reads as too close to the right column without this offset.
+    transform: translateX(-25px);
+    filter: drop-shadow(0 6px 14px rgba(0, 0, 0, 0.10));
+  }
+
+  // Vertically center the row so the shorter info column sits in the
+  // middle of the character's height instead of anchoring at the top.
+  .home-profile .row {
+    align-items: center;
   }
 
   // Profile image (Sidebar) — same palette background behind the small avatar

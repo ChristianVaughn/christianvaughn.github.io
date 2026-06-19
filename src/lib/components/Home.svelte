@@ -11,12 +11,11 @@
       use:reveal={{ delay: 400, duration: 400 }}
       data-reveal="fade-right"
     >
-      <figure class="profile-image text-center">
+      <figure class="profile-illustration text-center">
         <img
-          src="/images/profile.png"
+          src="/images/pixel2.png"
           alt=""
-          width="400"
-          height="400"
+          class="character"
           fetchpriority="high"
         />
       </figure>
