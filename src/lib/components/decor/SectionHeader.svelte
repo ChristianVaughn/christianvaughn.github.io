@@ -38,27 +38,39 @@
     text-align: center;
     margin-bottom: 2.5rem;
     position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 
+  /* Kicker is the dominant handwritten voice — it's the "human" speaking.
+     Sits big and tilted, slightly overlapping the tape band so they read
+     as a single hand-arranged unit instead of two stacked rows. */
   .kicker {
     font-family: var(--font-accent);
     color: var(--c-primary);
-    font-size: 1.6rem;
+    font-size: 2.8rem;
+    font-weight: 600;
     line-height: 1;
     display: inline-block;
-    transform: rotate(-3deg);
-    margin-bottom: 0.5rem;
+    transform: rotate(-5deg);
+    margin: 0 0 0.3rem -1.5rem;
+    position: relative;
+    z-index: 2;
   }
 
   .tape-band {
     display: inline-block;
     background-color: var(--tape-color);
-    padding: 0.65rem 2.5rem;
+    padding: 0.55rem 2.2rem;
     box-shadow:
       0 4px 12px rgba(0, 0, 0, 0.12),
       inset 0 0 0 1px rgba(255, 255, 255, 0.18);
     transform: rotate(var(--tilt));
     opacity: 0.95;
+    position: relative;
+    z-index: 1;
+    margin-right: -1rem;
   }
 
   .pattern-stripes {
@@ -99,7 +111,7 @@
 
   .title {
     font-family: var(--font-heading);
-    font-size: 2rem;
+    font-size: 1.7rem;
     font-weight: 700;
     color: #fff;
     margin: 0;
@@ -109,11 +121,15 @@
   }
 
   @media (max-width: 575.98px) {
+    .kicker {
+      font-size: 2.2rem;
+      margin-left: -0.5rem;
+    }
     .tape-band {
       padding: 0.5rem 1.5rem;
     }
     .title {
-      font-size: 1.6rem;
+      font-size: 1.4rem;
     }
   }
 </style>

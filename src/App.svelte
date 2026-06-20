@@ -5,7 +5,6 @@
   import Resume from "./lib/components/Resume.svelte";
   import Portfolio from "./lib/components/Portfolio.svelte";
   import Footer from "./lib/components/Footer.svelte";
-  import Divider from "./lib/components/Divider.svelte";
   import PaletteSwitcher from "./lib/components/PaletteSwitcher.svelte";
   import PaperPage from "./lib/components/decor/PaperPage.svelte";
   import Sparkle from "./lib/components/decor/Sparkle.svelte";
@@ -14,7 +13,6 @@
   const isDev = import.meta.env.DEV;
 
   const navs = [
-    { hash: "home", icon: "bx bx-home-smile", text: "Home" },
     { hash: "about", icon: "bx bx-user", text: "About" },
     { hash: "resume", icon: "bx bx-book-open", text: "Resume" },
     { hash: "portfolio", icon: "bx bx-palette", text: "Portfolio" },
@@ -26,17 +24,14 @@
 <div class="wrapper box-wrapper theme-soft-bg">
   <div class="container position-relative">
     <main class="pages-stack">
-      <!-- Page 1 — Cover (notepad strip, no internal title; hero is its own header) -->
+      <!-- Page 1 — About (hero + about copy, one continuous page) -->
       <PaperPage
         tilt={-1.8}
         pattern="dotted"
         headerBg="var(--c-primary)"
       >
-        <section id="home">
-          <Home />
-        </section>
-        <Divider />
         <section id="about">
+          <Home />
           <About />
         </section>
       </PaperPage>
