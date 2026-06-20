@@ -25,11 +25,7 @@
   <div class="container position-relative">
     <main class="pages-stack">
       <!-- Page 1 — About (hero + about copy, one continuous page) -->
-      <PaperPage
-        tilt={-1.8}
-        pattern="dotted"
-        headerBg="var(--c-primary)"
-      >
+      <PaperPage tilt={-1.8} pattern="dotted" headerBg="var(--c-primary)">
         <section id="about">
           <Home />
           <About />
@@ -42,11 +38,7 @@
       </div>
 
       <!-- Page 2 — Resume -->
-      <PaperPage
-        tilt={1.5}
-        pattern="lined"
-        headerBg="var(--c-primary)"
-      >
+      <PaperPage tilt={1.5} pattern="lined" headerBg="var(--c-primary)">
         <section id="resume">
           <Resume />
         </section>
@@ -58,11 +50,7 @@
       </div>
 
       <!-- Page 3 — Portfolio -->
-      <PaperPage
-        tilt={-1.5}
-        pattern="grid"
-        headerBg="var(--c-primary)"
-      >
+      <PaperPage tilt={-1.5} pattern="grid" headerBg="var(--c-primary)">
         <section id="portfolio">
           <Portfolio />
         </section>
@@ -81,7 +69,7 @@
     display: flex;
     flex-direction: column;
     gap: 0; /* Peek decorations provide the spacing */
-    padding: 2rem 0;
+    padding-bottom: 2rem;
   }
 
   .page-peek {
