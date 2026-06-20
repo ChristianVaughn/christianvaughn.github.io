@@ -26,8 +26,9 @@
   --c-bg: #faf6f4;
   --c-bg-soft: #f3e9e6;
   --c-muted: #d9c9c4;
-  --font-heading: "Fraunces", Georgia, serif;
+  --font-heading: "Quicksand", sans-serif;
   --font-body: "Poppins", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 [data-palette="rose-sage"] {
@@ -44,6 +45,7 @@
   --c-muted: #c9bfb2;
   --font-heading: "DM Serif Display", Georgia, serif;
   --font-body: "Poppins", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 [data-palette="rose-lavender"] {
@@ -60,6 +62,7 @@
   --c-muted: #d6c8df;
   --font-heading: "Quicksand", sans-serif;
   --font-body: "Quicksand", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 [data-palette="rose-peach"] {
@@ -76,6 +79,7 @@
   --c-muted: #e8c9b3;
   --font-heading: "Fraunces", Georgia, serif;
   --font-body: "Poppins", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 // ============================================================================
@@ -113,22 +117,63 @@ a {
 // ============================================================================
 
 [data-palette] {
-  // Wrapper background — subtle diagonal gradient from the soft palette
-  // tone (top-left) to the lighter base tone (bottom-right). Reads like
-  // soft morning light across the page.
+  // Wrapper background — solid soft palette tone. The PaperPages provide
+  // all the texture; the wrapper stays clean so the pages have a calm
+  // ground to lift off against. (See design log: cycled through grid /
+  // gradient / SVG noise / canvas PNG — solid won.)
+  //
+  // FUTURE: try a darker palette tone here (e.g. a deeper rose-cream,
+  // or var(--c-muted) at low opacity) so the floating PaperPages on top
+  // lift off more visibly.
   .theme-soft-bg {
     background-color: var(--c-bg-soft) !important;
-    background-image: linear-gradient(
-      135deg,
-      var(--c-bg-soft) 0%,
-      var(--c-bg) 100%
-    ) !important;
+    background-image: none !important;
   }
 
   // Card background — warm cream that pairs with the wrapper instead of
   // pure white. `bg-white` was removed from App.svelte so we own this.
   .content.box-content-2 {
     background-color: var(--c-bg);
+  }
+
+  // No-sidebar layout — pull the left padding back since the sidebar
+  // isn't taking horizontal space anymore. Symmetric padding both sides.
+  .content.box-content-2.no-sidebar {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media (max-width: 991.98px) {
+    .content.box-content-2.no-sidebar {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
+  // Mobile overflow safety net — page tilts can extend rotated corners
+  // past the viewport edges on narrow screens. Belt-and-suspenders: we
+  // also kill the tilt at <768px inside PaperPage's own CSS.
+  .wrapper.box-wrapper {
+    overflow-x: hidden;
+  }
+
+  // Drop the template's 100px section padding — the PaperPage handles
+  // outer padding now, and inner components manage their own spacing.
+  .section {
+    padding: 0;
+  }
+
+  // Footer override — the template's _footer.scss sets a dark bg from
+  // the theme-list footer-bg key. We want it transparent.
+  footer {
+    background: transparent !important;
+    color: inherit !important;
+    min-height: 0;
+    padding: 0;
+  }
+  // About sits right under the Home hero inside the same page, so give
+  // it a top buffer so the two don't collide.
+  .about-scrap {
+    padding-top: 3rem;
   }
 
   // Solid theme background — used on the vertical-navbar collapse
