@@ -119,6 +119,12 @@ a {
 [data-palette] {
   // Wrapper background — scrapbook grid paper. Inline SVG grid tile at
   // 30px squares, palette-tinted lines. Cream base shows through.
+  //
+  // FUTURE: try a darker palette tone here (e.g. a deeper rose-cream,
+  // or var(--c-muted) at low opacity) so the floating PaperPages on top
+  // lift off more visibly. The current cream-on-cream is subtle by
+  // design; a darker backdrop would push the "physical scrapbook" feel
+  // harder.
   .theme-soft-bg {
     background-color: var(--c-bg-soft) !important;
     background-image:
@@ -144,6 +150,13 @@ a {
       padding-left: 20px;
       padding-right: 20px;
     }
+  }
+
+  // Mobile overflow safety net — page tilts can extend rotated corners
+  // past the viewport edges on narrow screens. Belt-and-suspenders: we
+  // also kill the tilt at <768px inside PaperPage's own CSS.
+  .wrapper.box-wrapper {
+    overflow-x: hidden;
   }
 
   // Solid theme background — used on the vertical-navbar collapse
