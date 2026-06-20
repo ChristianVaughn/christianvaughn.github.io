@@ -28,6 +28,7 @@
   --c-muted: #d9c9c4;
   --font-heading: "Fraunces", Georgia, serif;
   --font-body: "Poppins", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 [data-palette="rose-sage"] {
@@ -44,6 +45,7 @@
   --c-muted: #c9bfb2;
   --font-heading: "DM Serif Display", Georgia, serif;
   --font-body: "Poppins", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 [data-palette="rose-lavender"] {
@@ -60,6 +62,7 @@
   --c-muted: #d6c8df;
   --font-heading: "Quicksand", sans-serif;
   --font-body: "Quicksand", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 [data-palette="rose-peach"] {
@@ -76,6 +79,7 @@
   --c-muted: #e8c9b3;
   --font-heading: "Fraunces", Georgia, serif;
   --font-body: "Poppins", sans-serif;
+  --font-accent: "Caveat", cursive;
 }
 
 // ============================================================================
@@ -113,16 +117,14 @@ a {
 // ============================================================================
 
 [data-palette] {
-  // Wrapper background — subtle diagonal gradient from the soft palette
-  // tone (top-left) to the lighter base tone (bottom-right). Reads like
-  // soft morning light across the page.
+  // Wrapper background — scrapbook grid paper. Inline SVG grid tile at
+  // 30px squares, palette-tinted lines. Cream base shows through.
   .theme-soft-bg {
     background-color: var(--c-bg-soft) !important;
-    background-image: linear-gradient(
-      135deg,
-      var(--c-bg-soft) 0%,
-      var(--c-bg) 100%
-    ) !important;
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 0 L0 0 L0 30' fill='none' stroke='rgba(74,59,92,0.07)' stroke-width='1'/></svg>") !important;
+    background-size: 30px 30px !important;
+    background-repeat: repeat !important;
   }
 
   // Card background — warm cream that pairs with the wrapper instead of
