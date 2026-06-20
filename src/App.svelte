@@ -1,5 +1,5 @@
 <script lang="ts">
-  import Navbar from "./lib/components/Navbar.svelte";
+  import FloatingNav from "./lib/components/FloatingNav.svelte";
   import Home from "./lib/components/Home.svelte";
   import About from "./lib/components/About.svelte";
   import Resume from "./lib/components/Resume.svelte";
@@ -18,10 +18,11 @@
   ];
 </script>
 
+<FloatingNav {navs} />
+
 <div class="wrapper box-wrapper theme-soft-bg">
   <div class="container position-relative">
-    <Navbar {navs} />
-    <main class="content box-content-2">
+    <main class="content box-content-2 no-sidebar">
       <section id="home">
         <Home />
       </section>

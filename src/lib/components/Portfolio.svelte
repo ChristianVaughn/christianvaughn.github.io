@@ -3,6 +3,7 @@
   import { reveal } from "../actions/reveal";
   import { flip } from "svelte/animate";
   import PaperCard from "./decor/PaperCard.svelte";
+  import SectionHeader from "./decor/SectionHeader.svelte";
   import Sparkle from "./decor/Sparkle.svelte";
   import Star from "./decor/Star.svelte";
 
@@ -13,21 +14,25 @@
       : portfolio.projects.filter((p) => p.groups.includes(filterKey)),
   );
 
-  const tilts = [-1.5, 1.2, -0.8, 1.5, -1, 0.8, -1.8, 1];
-
+  const tilts = [-1.8, 1.5, -1, 1.8, -1.5, 0.9, -1.3, 1.2, -2, 1, -1.6, 1.4];
   function tiltFor(i: number) {
     return tilts[i % tilts.length] ?? 0;
+  }
+
+  // Bento pattern — index positions get featured-wide treatment
+  function isWide(i: number) {
+    return i % 5 === 0;
   }
 </script>
 
 <section class="section portfolio-scrap">
-  <div class="portfolio-head">
-    <span class="kicker">stuff i've built</span>
-    <h2 class="title">portfolio</h2>
-    <span class="head-decor">
-      <Star size={28} color="var(--c-primary)" rotation={-10} />
-    </span>
-  </div>
+  <SectionHeader
+    title="portfolio"
+    kicker="stuff i've built"
+    tapeColor="var(--c-primary)"
+    tapePattern="stripes"
+    tilt={-2}
+  />
 
   <div
     class="filters-row"
@@ -49,7 +54,11 @@
 
   <div class="project-grid">
     {#each visible as item, idx (item.title)}
-      <div class="project-cell" animate:flip={{ duration: 300 }}>
+      <div
+        class="project-cell"
+        class:wide={isWide(idx)}
+        animate:flip={{ duration: 300 }}
+      >
         <PaperCard
           tilt={tiltFor(idx)}
           tape={idx % 3 === 0}
@@ -57,7 +66,7 @@
           tapePattern={idx % 2 === 0 ? "stripes" : "dots"}
           padding="1.25rem 1.4rem"
         >
-          <div class="project-row">
+          <div class="project-row" class:is-featured={isWide(idx)}>
             <div class="project-main">
               {#if item.link}
                 <a
@@ -67,10 +76,7 @@
                   rel="noopener noreferrer"
                 >
                   <h5 class="project-title">{item.title}</h5>
-                  <i
-                    class="bx bx-link-external arrow"
-                    aria-hidden="true"
-                  ></i>
+                  <i class="bx bx-link-external arrow" aria-hidden="true"></i>
                 </a>
               {:else}
                 <h5 class="project-title is-static">{item.title}</h5>
@@ -87,6 +93,11 @@
                 <span class="project-status">{item.altLink}</span>
               {/if}
             </div>
+            {#if isWide(idx)}
+              <span class="featured-deco">
+                <Sparkle size={26} color="var(--c-primary)" rotation={20} />
+              </span>
+            {/if}
           </div>
         </PaperCard>
       </div>
@@ -94,38 +105,15 @@
   </div>
 
   <div class="bottom-decor">
-    <Sparkle size={24} color="var(--c-secondary)" rotation={20} />
+    <Sparkle size={22} color="var(--c-secondary)" rotation={20} />
+    <Star size={26} color="var(--c-primary)" rotation={-15} />
+    <Sparkle size={18} color="var(--c-primary)" rotation={-30} />
   </div>
 </section>
 
 <style>
   .portfolio-scrap {
     position: relative;
-  }
-  .portfolio-head {
-    text-align: center;
-    margin-bottom: 2rem;
-    position: relative;
-  }
-  .kicker {
-    font-family: var(--font-accent);
-    color: var(--c-primary);
-    font-size: 1.5rem;
-    line-height: 1;
-    display: inline-block;
-    transform: rotate(-3deg);
-  }
-  .title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--c-heading);
-    margin: 0.25rem 0 0;
-  }
-  .head-decor {
-    position: absolute;
-    top: 0;
-    right: 30%;
-    transform: rotate(15deg);
   }
 
   /* Filter chips */
@@ -163,22 +151,36 @@
     border-color: var(--c-primary);
   }
 
-  /* Project grid */
+  /* Bento grid */
   .project-grid {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 1.5rem;
+    grid-auto-flow: dense;
+    gap: 1.75rem;
   }
   @media (min-width: 768px) {
     .project-grid {
-      grid-template-columns: 1fr 1fr;
-      gap: 1.75rem 2rem;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1.75rem 1.75rem;
+    }
+    .project-cell.wide {
+      grid-column: span 2;
+    }
+  }
+  @media (min-width: 1200px) {
+    .project-grid {
+      gap: 2rem 2.25rem;
     }
   }
 
   .project-row {
     display: flex;
     flex-direction: column;
+    position: relative;
+  }
+  .project-row.is-featured {
+    /* Featured cards get a bit more vertical breathing room */
+    min-height: 100%;
   }
   .project-title-link {
     display: inline-flex;
@@ -200,8 +202,8 @@
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
-  .project-title.is-static {
-    color: var(--c-heading);
+  .project-row.is-featured .project-title {
+    font-size: 1.3rem;
   }
   .arrow {
     color: var(--c-primary);
@@ -246,8 +248,18 @@
     line-height: 1.4;
   }
 
+  .featured-deco {
+    position: absolute;
+    top: -4px;
+    right: 0;
+    transform: rotate(15deg);
+  }
+
   .bottom-decor {
-    text-align: center;
-    margin-top: 2rem;
+    display: flex;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2.5rem;
   }
 </style>

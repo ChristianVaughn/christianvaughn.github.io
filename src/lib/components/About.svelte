@@ -2,16 +2,20 @@
   import profile from "../data/profile.json";
   import { reveal } from "../actions/reveal";
   import PaperCard from "./decor/PaperCard.svelte";
+  import SectionHeader from "./decor/SectionHeader.svelte";
   import Sparkle from "./decor/Sparkle.svelte";
   import Sprig from "./decor/Sprig.svelte";
   import Heart from "./decor/Heart.svelte";
 </script>
 
 <section class="section about-scrap">
-  <div class="about-head">
-    <span class="kicker">about me</span>
-    <h2 class="title">a few things about me</h2>
-  </div>
+  <SectionHeader
+    title="about me"
+    kicker="a few things"
+    tapeColor="var(--c-secondary)"
+    tapePattern="dots"
+    tilt={1.5}
+  />
 
   <div class="about-decor">
     <span class="d d-1">
@@ -56,25 +60,6 @@
 <style>
   .about-scrap {
     position: relative;
-  }
-
-  .about-head {
-    text-align: center;
-    margin-bottom: 2.5rem;
-  }
-  .kicker {
-    font-family: var(--font-accent);
-    color: var(--c-primary);
-    font-size: 1.5rem;
-    line-height: 1;
-    display: inline-block;
-    transform: rotate(-3deg);
-  }
-  .title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--c-heading);
-    margin: 0.25rem 0 0;
   }
 
   .about-decor {

@@ -133,6 +133,19 @@ a {
     background-color: var(--c-bg);
   }
 
+  // No-sidebar layout — pull the left padding back since the sidebar
+  // isn't taking horizontal space anymore. Symmetric padding both sides.
+  .content.box-content-2.no-sidebar {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  @media (max-width: 991.98px) {
+    .content.box-content-2.no-sidebar {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+  }
+
   // Solid theme background — used on the vertical-navbar collapse
   .theme-bg {
     background-color: var(--c-primary) !important;

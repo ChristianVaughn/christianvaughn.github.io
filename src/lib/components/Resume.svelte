@@ -2,6 +2,7 @@
   import resume from "../data/resume.json";
   import { reveal } from "../actions/reveal";
   import PaperCard from "./decor/PaperCard.svelte";
+  import SectionHeader from "./decor/SectionHeader.svelte";
   import Sparkle from "./decor/Sparkle.svelte";
   import Star from "./decor/Star.svelte";
 
@@ -14,10 +15,13 @@
 </script>
 
 <section class="section resume-scrap">
-  <div class="resume-head">
-    <span class="kicker">where i've been</span>
-    <h2 class="title">resume</h2>
-  </div>
+  <SectionHeader
+    title="resume"
+    kicker="where i've been"
+    tapeColor="var(--c-primary)"
+    tapePattern="checker"
+    tilt={-1.5}
+  />
 
   <div class="row">
     <!-- Work History column -->
@@ -95,24 +99,6 @@
 <style>
   .resume-scrap {
     position: relative;
-  }
-  .resume-head {
-    text-align: center;
-    margin-bottom: 3rem;
-  }
-  .kicker {
-    font-family: var(--font-accent);
-    color: var(--c-primary);
-    font-size: 1.5rem;
-    line-height: 1;
-    display: inline-block;
-    transform: rotate(-3deg);
-  }
-  .title {
-    font-family: var(--font-heading);
-    font-size: 2rem;
-    color: var(--c-heading);
-    margin: 0.25rem 0 0;
   }
 
   .col-head {
