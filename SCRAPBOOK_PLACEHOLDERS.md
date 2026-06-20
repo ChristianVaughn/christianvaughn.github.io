@@ -33,10 +33,18 @@ The Sticker-Rework branch swaps the editorial layout for a scrapbook/sticker aes
 - Wanted: a "drawn quickly with a marker" heart with slightly uneven sides
 - Used: About + Home decorations
 
+## Tape pieces (also worth hand-drawing if you go that far)
+
+### `src/lib/components/decor/WashiTape.svelte`
+- Current: CSS gradients for the patterns (`stripes` / `dots` / `checker` / `solid`) on a translucent palette-colored block
+- Wanted: real hand-drawn tape pieces with paper-fiber texture, slightly irregular edges, and crayon-feeling pattern marks
+- Used: SectionHeader (the title tape bands), throughout decorative accents
+- How to swap: turn the WashiTape into an `<img>` or inline SVG asset slot. Could have one base tape PNG with different overlaid color tints, OR multiple hand-drawn tape variants
+
 ## Don't need to replace (these are CSS-based and look fine)
 
-- `src/lib/components/decor/WashiTape.svelte` — the patterns (stripes/dots/checker) are pure CSS gradients. Authentic washi has real paper texture, but the CSS version reads convincingly as tape at small sizes. Only swap if you want PNG/SVG paper-texture tiles.
 - `src/lib/components/decor/PaperCard.svelte` — pure CSS shadow + tilt. No asset needed.
+- `src/lib/components/decor/PaperPage.svelte` — pure CSS strip + dashed perforation + bg pattern. The bg patterns inside (grid / lined / dotted) are inline SVG and read fine as paper rule lines.
 
 ## How to replace any of them
 

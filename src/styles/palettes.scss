@@ -26,7 +26,7 @@
   --c-bg: #faf6f4;
   --c-bg-soft: #f3e9e6;
   --c-muted: #d9c9c4;
-  --font-heading: "Fraunces", Georgia, serif;
+  --font-heading: "Quicksand", sans-serif;
   --font-body: "Poppins", sans-serif;
   --font-accent: "Caveat", cursive;
 }
@@ -117,20 +117,17 @@ a {
 // ============================================================================
 
 [data-palette] {
-  // Wrapper background — scrapbook grid paper. Inline SVG grid tile at
-  // 30px squares, palette-tinted lines. Cream base shows through.
+  // Wrapper background — solid soft palette tone. The PaperPages provide
+  // all the texture; the wrapper stays clean so the pages have a calm
+  // ground to lift off against. (See design log: cycled through grid /
+  // gradient / SVG noise / canvas PNG — solid won.)
   //
   // FUTURE: try a darker palette tone here (e.g. a deeper rose-cream,
   // or var(--c-muted) at low opacity) so the floating PaperPages on top
-  // lift off more visibly. The current cream-on-cream is subtle by
-  // design; a darker backdrop would push the "physical scrapbook" feel
-  // harder.
+  // lift off more visibly.
   .theme-soft-bg {
     background-color: var(--c-bg-soft) !important;
-    background-image:
-      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='30' height='30'><path d='M30 0 L0 0 L0 30' fill='none' stroke='rgba(74,59,92,0.07)' stroke-width='1'/></svg>") !important;
-    background-size: 30px 30px !important;
-    background-repeat: repeat !important;
+    background-image: none !important;
   }
 
   // Card background — warm cream that pairs with the wrapper instead of
@@ -157,6 +154,26 @@ a {
   // also kill the tilt at <768px inside PaperPage's own CSS.
   .wrapper.box-wrapper {
     overflow-x: hidden;
+  }
+
+  // Drop the template's 100px section padding — the PaperPage handles
+  // outer padding now, and inner components manage their own spacing.
+  .section {
+    padding: 0;
+  }
+
+  // Footer override — the template's _footer.scss sets a dark bg from
+  // the theme-list footer-bg key. We want it transparent.
+  footer {
+    background: transparent !important;
+    color: inherit !important;
+    min-height: 0;
+    padding: 0;
+  }
+  // About sits right under the Home hero inside the same page, so give
+  // it a top buffer so the two don't collide.
+  .about-scrap {
+    padding-top: 3rem;
   }
 
   // Solid theme background — used on the vertical-navbar collapse

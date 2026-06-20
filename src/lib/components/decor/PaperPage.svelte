@@ -4,7 +4,7 @@
   // Section titles live INSIDE the page content (via SectionHeader) —
   // the notepad strip is purely a page-break affordance, like the
   // colored top edge on a legal pad.
-  type Pattern = "grid" | "lined" | "dotted";
+  type Pattern = "grid" | "lined" | "dotted" | "hatch";
   type Props = {
     tilt?: number;
     pattern?: Pattern;
@@ -76,6 +76,14 @@
     background-image:
       url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='22' height='22'><circle cx='2' cy='2' r='1.4' fill='rgba(74,59,92,0.16)'/></svg>");
     background-size: 22px 22px;
+  }
+
+  /* Diagonal hatch — visually distinct from the outer grid, used on
+     Portfolio so the page doesn't blend with the wrapper backdrop. */
+  .pattern-hatch .page-inner {
+    background-image:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='18' height='18'><line x1='-1' y1='19' x2='19' y2='-1' stroke='rgba(74,59,92,0.10)' stroke-width='1'/></svg>");
+    background-size: 18px 18px;
   }
 
   /* ============================================================ */
