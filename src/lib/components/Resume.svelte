@@ -30,7 +30,7 @@
         <i class="bx bx-briefcase me-2" aria-hidden="true"></i>
         <h3 class="col-title">Work History</h3>
         <span class="decor-icon">
-          <Sparkle size={22} color="var(--c-primary)" rotation={12} />
+          <Sparkle size={44} color="pink" variant={2} rotation={12} />
         </span>
       </div>
 
@@ -65,7 +65,7 @@
         <i class="bx bxs-graduation me-2" aria-hidden="true"></i>
         <h3 class="col-title">Education History</h3>
         <span class="decor-icon">
-          <Star size={22} color="var(--c-secondary)" rotation={-12} />
+          <Star size={44} color="purple" variant={1} rotation={-12} />
         </span>
       </div>
 

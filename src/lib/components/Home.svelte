@@ -81,19 +81,25 @@
 
     <!-- Scattered decorative sparkles/stars/hearts -->
     <span class="deco deco-1">
-      <Sparkle size={28} color="var(--c-primary)" rotation={15} />
+      <Sparkle size={64} color="pink" variant={1} rotation={15} />
     </span>
     <span class="deco deco-2">
-      <Star size={24} color="var(--c-secondary)" rotation={-12} />
+      <Star size={60} color="purple" variant={2} rotation={-12} />
     </span>
     <span class="deco deco-3">
-      <Sparkle size={22} color="var(--c-secondary)" rotation={-20} />
+      <Sparkle size={56} color="purple" variant={2} rotation={-20} />
     </span>
     <span class="deco deco-4">
-      <Heart size={18} color="var(--c-primary)" rotation={-15} />
+      <Heart size={52} color="pink" variant={2} rotation={-15} />
     </span>
     <span class="deco deco-5">
-      <Sparkle size={16} color="var(--c-primary)" rotation={30} />
+      <Sparkle size={48} color="pink" variant={1} rotation={30} />
+    </span>
+    <span class="deco deco-6">
+      <Heart size={48} color="purple" variant={1} rotation={12} />
+    </span>
+    <span class="deco deco-7">
+      <Star size={56} color="pink" variant={1} rotation={-8} />
     </span>
   </div>
 </section>
@@ -249,24 +255,35 @@
     z-index: 1;
   }
   .deco-1 {
-    top: 4%;
-    right: 4%;
+    top: 2%;
+    right: 2%;
   }
   .deco-2 {
-    top: 38%;
-    left: 38%;
+    top: 40%;
+    left: 36%;
   }
   .deco-3 {
-    bottom: 22%;
-    right: 6%;
+    bottom: 20%;
+    right: 4%;
   }
   .deco-4 {
-    bottom: 14%;
-    left: 4%;
+    /* pink heart near the character + pink sparkle (lower-left area) */
+    bottom: 18%;
+    left: 6%;
   }
   .deco-5 {
     top: 55%;
     left: 0;
+  }
+  .deco-6 {
+    /* purple heart — to the right of the character, in the gap above
+       "hello i'm" and between the character's washi tape and the name */
+    top: 8%;
+    left: 38%;
+  }
+  .deco-7 {
+    top: 68%;
+    right: 28%;
   }
 
   /* ============================================================ */

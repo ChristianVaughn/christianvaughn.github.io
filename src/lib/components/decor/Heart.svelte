@@ -1,37 +1,37 @@
 <script lang="ts">
-  // [PLACEHOLDER] — heart shape. Swap for a hand-drawn squiggle heart later.
+  // Hand-drawn crayon-style heart. Uses PNG assets at
+  // /images/{color}_heart{variant}.png. The assets were drawn at slight
+  // natural angles; rotation prop adds on top.
+  type Color = "pink" | "purple";
+  type Variant = 1 | 2;
   type Props = {
     size?: number;
-    color?: string;
+    color?: Color;
+    variant?: Variant;
     rotation?: number;
-    filled?: boolean;
   };
   let {
     size = 32,
-    color = "var(--c-primary)",
+    color = "pink",
+    variant = 1,
     rotation = 0,
-    filled = true,
   }: Props = $props();
 </script>
 
-<svg
+<img
   class="heart"
+  src="/images/{color}_heart{variant}.png"
+  alt=""
   width={size}
   height={size}
-  viewBox="0 0 24 24"
   style="transform: rotate({rotation}deg)"
   aria-hidden="true"
->
-  <path
-    d="M12 21 C12 21 3 14 3 8.5 C3 5.5 5.5 3 8.5 3 C10.5 3 12 4.5 12 6.5 C12 4.5 13.5 3 15.5 3 C18.5 3 21 5.5 21 8.5 C21 14 12 21 12 21 Z"
-    fill={filled ? color : "none"}
-    stroke={color}
-    stroke-width="1.5"
-  />
-</svg>
+  loading="lazy"
+/>
 
 <style>
   .heart {
     display: inline-block;
+    object-fit: contain;
   }
 </style>

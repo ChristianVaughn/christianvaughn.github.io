@@ -6,6 +6,7 @@
   import SectionHeader from "./decor/SectionHeader.svelte";
   import Sparkle from "./decor/Sparkle.svelte";
   import Star from "./decor/Star.svelte";
+  import Heart from "./decor/Heart.svelte";
 
   let filterKey = $state("all");
   const visible = $derived(
@@ -95,7 +96,13 @@
             </div>
             {#if isWide(idx)}
               <span class="featured-deco">
-                <Sparkle size={26} color="var(--c-primary)" rotation={20} />
+                {#if idx === 0}
+                  <Star size={44} color="pink" variant={1} rotation={18} />
+                {:else if idx === 5}
+                  <Heart size={40} color="purple" variant={2} rotation={-12} />
+                {:else}
+                  <Sparkle size={44} color="pink" variant={2} rotation={22} />
+                {/if}
               </span>
             {/if}
           </div>
@@ -105,9 +112,9 @@
   </div>
 
   <div class="bottom-decor">
-    <Sparkle size={22} color="var(--c-secondary)" rotation={20} />
-    <Star size={26} color="var(--c-primary)" rotation={-15} />
-    <Sparkle size={18} color="var(--c-primary)" rotation={-30} />
+    <Heart size={40} color="pink" variant={1} rotation={-10} />
+    <Star size={44} color="purple" variant={2} rotation={-15} />
+    <Sparkle size={36} color="pink" variant={1} rotation={-30} />
   </div>
 </section>
 

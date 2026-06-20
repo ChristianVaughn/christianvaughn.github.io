@@ -17,15 +17,16 @@
     tilt={1.5}
   />
 
+  <span class="post-header-heart" aria-hidden="true">
+    <Heart size={48} color="pink" variant={1} rotation={15} />
+  </span>
+
   <div class="about-decor">
     <span class="d d-1">
-      <Sparkle size={28} color="var(--c-secondary)" rotation={20} />
+      <Sparkle size={52} color="purple" variant={1} rotation={20} />
     </span>
     <span class="d d-2">
       <Sprig size={48} color="var(--c-secondary)" rotation={-25} />
-    </span>
-    <span class="d d-3">
-      <Heart size={22} color="var(--c-primary)" rotation={15} />
     </span>
   </div>
 
@@ -78,9 +79,22 @@
     top: 60px;
     right: 4%;
   }
-  .d-3 {
-    bottom: -10px;
-    left: 45%;
+
+  /* Pink heart that lives in the gap between the "about me" tape header
+     and the top of the paper cards. Pulled up via negative margin into
+     the SectionHeader's bottom space, offset left of center. */
+  .post-header-heart {
+    display: block;
+    width: max-content;
+    margin: -2.75rem 0 0.5rem 33%;
+    position: relative;
+    z-index: 1;
+    pointer-events: none;
+  }
+  @media (max-width: 575.98px) {
+    .post-header-heart {
+      margin-left: 18%;
+    }
   }
 
   .paper-text {
