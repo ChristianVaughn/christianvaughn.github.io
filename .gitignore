@@ -21,3 +21,6 @@ yarn-error.log*
 
 # typescript
 *.tsbuildinfo
+
+# generated readme assets (committed to profile repo, not this one)
+readme-assets/

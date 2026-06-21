@@ -15,7 +15,8 @@
       "Bash(ffmpeg -y -i profile-original.jpg -vf scale=720:720 -q:v 4 profile.jpg)",
       "Bash(pkill -f \"vite preview\")",
       "Bash(npm run *)",
-      "Bash(grep -oE '[^,]{0,200}\\\\.v-header-2[^{}]{0,80}i[^{}]{0,80}\\\\{[^}]{0,200}\\\\}' /d/Documents/Github/SimplyTestmu.github.io/dist/assets/index-C9wEs01g.css)"
+      "Bash(grep -oE '[^,]{0,200}\\\\.v-header-2[^{}]{0,80}i[^{}]{0,80}\\\\{[^}]{0,200}\\\\}' /d/Documents/Github/SimplyTestmu.github.io/dist/assets/index-C9wEs01g.css)",
+      "Bash(npx playwright *)"
     ],
     "deny": [],
     "ask": []
